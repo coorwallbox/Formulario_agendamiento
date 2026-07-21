@@ -1,0 +1,269 @@
+/* ============================================
+   VARIABLES CSS - Paleta corporativa y medidas
+   ============================================ */
+:root {
+  /* Paleta corporativa — verde institucional + neutros */
+  --color-primario: #03787C;
+  --color-primario-hover: #073A41;
+  --color-primario-light: #DDFCFF;
+  --color-secundario: #363636;
+  --color-acento: #1B8093;
+
+  /* Superficies y fondos */
+  --color-fondo-app: #F5F7FA;
+  --color-superficie: #FFFFFF;
+  --color-superficie-alt: #F8F9FB;
+  --color-borde: #E0E4EA;
+  --color-borde-focus: #03787C;
+
+  /* Texto (no incluido en la paleta corporativa, se mantiene neutro) */
+  --color-text-muted: #6b7b8c;
+
+  /* Estados semánticos */
+  --color-exito: #61AE71;
+  --color-exito-bg: #E6F2E9;
+  --color-error: #DE4164;
+  --color-error-bg: #F8D8DF;
+  --color-advertencia: #ED8921;
+  --color-advertencia-bg: #FCEAD8;
+  --color-info: #1565C0;
+  --color-info-bg: #E3F2FD;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  --font-base: "Segoe UI", Roboto, Arial, sans-serif;
+  --font-size-base: 15px;
+
+  --transition-fast: 0.15s ease-in-out;
+}
+
+/* ============================================
+   RESET BÁSICO
+   ============================================ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  font-size: var(--font-size-base);
+  background-color: var(--color-fondo-app);
+  color: var(--color-secundario);
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.app-header {
+  background-color: var(--color-primario);
+  color: #fff;
+  padding: var(--spacing-lg);
+  text-align: center;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* ============================================
+   TABS - NAVEGACIÓN
+   ============================================ */
+.tabs-nav {
+  display: flex;
+  overflow-x: auto;
+  background-color: var(--color-superficie);
+  border-bottom: 1px solid var(--color-borde);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.tab-btn {
+  flex: 1 0 auto;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: none;
+  background: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  color: var(--color-primario);
+}
+
+.tab-btn.active {
+  color: var(--color-primario);
+  border-bottom-color: var(--color-primario);
+}
+
+/* ============================================
+   TABS - CONTENIDO
+   ============================================ */
+#tabsContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+  animation: fadeIn var(--transition-fast);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ============================================
+   FORMULARIO
+   ============================================ */
+.form-card {
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.client-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md) var(--spacing-lg);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.form-group-full {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-secundario);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px var(--spacing-sm);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--color-secundario);
+  background-color: var(--color-superficie);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-borde-focus);
+  box-shadow: 0 0 0 3px var(--color-primario-light);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* Estado de error visual en un campo */
+.form-group input.input-error,
+.form-group select.input-error,
+.form-group textarea.input-error {
+  border-color: var(--color-error);
+}
+
+.field-error {
+  font-size: 0.78rem;
+  color: var(--color-error);
+  min-height: 1em;
+}
+
+/* ============================================
+   ACCIONES DEL FORMULARIO
+   ============================================ */
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-sm);
+}
+
+.btn-submit {
+  background-color: var(--color-primario);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 12px var(--spacing-lg);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.btn-submit:hover {
+  background-color: var(--color-primario-hover);
+}
+
+.btn-submit:disabled {
+  background-color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+.submit-feedback {
+  font-size: 0.85rem;
+}
+
+.submit-feedback.success {
+  color: var(--color-exito);
+}
+
+.submit-feedback.error {
+  color: var(--color-error);
+}
+
+/* ============================================
+   RESPONSIVE - MÓVIL
+   ============================================ */
+@media (max-width: 640px) {
+  .client-form {
+    grid-template-columns: 1fr;
+  }
+
+  .app-header h1 {
+    font-size: 1.2rem;
+  }
+
+  .tab-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.85rem;
+  }
+}

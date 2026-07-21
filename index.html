@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario de Agendamiento</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="app-header">
+    <h1>Formulario de agendamiento</h1>
+  </header>
+
+  <!-- Navegación de tabs (una por marca) -->
+  <nav class="tabs-nav" id="tabsNav">
+    <button class="tab-btn active" data-tab="Hyundai" type="button">Hyundai</button>
+    <button class="tab-btn" data-tab="Volvo" type="button">Volvo</button>
+    <button class="tab-btn" data-tab="MG" type="button">MG</button>
+    <button class="tab-btn" data-tab="Mazda" type="button">Mazda</button>
+    <button class="tab-btn" data-tab="Cupra" type="button">Cupra</button>
+  </nav>
+
+  <!-- Contenido de cada tab -->
+  <main id="tabsContainer">
+
+    <!-- ===== Hyundai ===== -->
+    <section class="tab-panel active" data-tab-panel="Hyundai">
+      <div class="form-card">
+        <form class="client-form" id="formHyundai" data-brand="Hyundai" novalidate>
+
+          <div class="form-group">
+            <label for="clientNameHyundai">Nombre del cliente</label>
+            <input type="text" id="clientNameHyundai" name="clientName" required />
+            <span class="field-error" data-error-for="clientNameHyundai"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="idNumberHyundai">Cédula</label>
+            <input type="text" id="idNumberHyundai" name="idNumber" inputmode="numeric" required />
+            <span class="field-error" data-error-for="idNumberHyundai"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phoneHyundai">Celular</label>
+            <input type="text" id="phoneHyundai" name="phone" inputmode="numeric" required />
+            <span class="field-error" data-error-for="phoneHyundai"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="vehicleRefHyundai">Referencia de vehículo</label>
+            <select id="vehicleRefHyundai" name="vehicleRef" required>
+              <option value="" disabled selected>Seleccione...</option>
+              <option value="opcion1">opcion1</option>
+              <option value="opcion2">opcion2</option>
+              <option value="opcion3">opcion3</option>
+            </select>
+            <span class="field-error" data-error-for="vehicleRefHyundai"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="addressHyundai">Dirección</label>
+            <input type="text" id="addressHyundai" name="address" required />
+            <span class="field-error" data-error-for="addressHyundai"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="cityHyundai">Ciudad</label>
+            <input type="text" id="cityHyundai" name="city" required />
+            <span class="field-error" data-error-for="cityHyundai"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="advisorNameHyundai">Nombre del asesor</label>
+            <input type="text" id="advisorNameHyundai" name="advisorName" required />
+            <span class="field-error" data-error-for="advisorNameHyundai"></span>
+          </div>
+
+          <div class="form-group form-group-full">
+            <label for="observationsHyundai">Observaciones</label>
+            <textarea id="observationsHyundai" name="observations" rows="4"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-submit">Registrar</button>
+            <span class="submit-feedback" data-feedback-for="formHyundai"></span>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== Volvo ===== -->
+    <section class="tab-panel" data-tab-panel="Volvo">
+      <div class="form-card">
+        <form class="client-form" id="formVolvo" data-brand="Volvo" novalidate>
+
+          <div class="form-group">
+            <label for="clientNameVolvo">Nombre del cliente</label>
+            <input type="text" id="clientNameVolvo" name="clientName" required />
+            <span class="field-error" data-error-for="clientNameVolvo"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="idNumberVolvo">Cédula</label>
+            <input type="text" id="idNumberVolvo" name="idNumber" inputmode="numeric" required />
+            <span class="field-error" data-error-for="idNumberVolvo"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phoneVolvo">Celular</label>
+            <input type="text" id="phoneVolvo" name="phone" inputmode="numeric" required />
+            <span class="field-error" data-error-for="phoneVolvo"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="vehicleRefVolvo">Referencia de vehículo</label>
+            <select id="vehicleRefVolvo" name="vehicleRef" required>
+              <option value="" disabled selected>Seleccione...</option>
+              <option value="opcion1">opcion1</option>
+              <option value="opcion2">opcion2</option>
+              <option value="opcion3">opcion3</option>
+            </select>
+            <span class="field-error" data-error-for="vehicleRefVolvo"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="addressVolvo">Dirección</label>
+            <input type="text" id="addressVolvo" name="address" required />
+            <span class="field-error" data-error-for="addressVolvo"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="cityVolvo">Ciudad</label>
+            <input type="text" id="cityVolvo" name="city" required />
+            <span class="field-error" data-error-for="cityVolvo"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="advisorNameVolvo">Nombre del asesor</label>
+            <input type="text" id="advisorNameVolvo" name="advisorName" required />
+            <span class="field-error" data-error-for="advisorNameVolvo"></span>
+          </div>
+
+          <div class="form-group form-group-full">
+            <label for="observationsVolvo">Observaciones</label>
+            <textarea id="observationsVolvo" name="observations" rows="4"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-submit">Registrar</button>
+            <span class="submit-feedback" data-feedback-for="formVolvo"></span>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== MG ===== -->
+    <section class="tab-panel" data-tab-panel="MG">
+      <div class="form-card">
+        <form class="client-form" id="formMG" data-brand="MG" novalidate>
+
+          <div class="form-group">
+            <label for="clientNameMG">Nombre del cliente</label>
+            <input type="text" id="clientNameMG" name="clientName" required />
+            <span class="field-error" data-error-for="clientNameMG"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="idNumberMG">Cédula</label>
+            <input type="text" id="idNumberMG" name="idNumber" inputmode="numeric" required />
+            <span class="field-error" data-error-for="idNumberMG"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phoneMG">Celular</label>
+            <input type="text" id="phoneMG" name="phone" inputmode="numeric" required />
+            <span class="field-error" data-error-for="phoneMG"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="vehicleRefMG">Referencia de vehículo</label>
+            <select id="vehicleRefMG" name="vehicleRef" required>
+              <option value="" disabled selected>Seleccione...</option>
+              <option value="opcion1">opcion1</option>
+              <option value="opcion2">opcion2</option>
+              <option value="opcion3">opcion3</option>
+            </select>
+            <span class="field-error" data-error-for="vehicleRefMG"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="addressMG">Dirección</label>
+            <input type="text" id="addressMG" name="address" required />
+            <span class="field-error" data-error-for="addressMG"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="cityMG">Ciudad</label>
+            <input type="text" id="cityMG" name="city" required />
+            <span class="field-error" data-error-for="cityMG"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="advisorNameMG">Nombre del asesor</label>
+            <input type="text" id="advisorNameMG" name="advisorName" required />
+            <span class="field-error" data-error-for="advisorNameMG"></span>
+          </div>
+
+          <div class="form-group form-group-full">
+            <label for="observationsMG">Observaciones</label>
+            <textarea id="observationsMG" name="observations" rows="4"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-submit">Registrar</button>
+            <span class="submit-feedback" data-feedback-for="formMG"></span>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== Mazda ===== -->
+    <section class="tab-panel" data-tab-panel="Mazda">
+      <div class="form-card">
+        <form class="client-form" id="formMazda" data-brand="Mazda" novalidate>
+
+          <div class="form-group">
+            <label for="clientNameMazda">Nombre del cliente</label>
+            <input type="text" id="clientNameMazda" name="clientName" required />
+            <span class="field-error" data-error-for="clientNameMazda"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="idNumberMazda">Cédula</label>
+            <input type="text" id="idNumberMazda" name="idNumber" inputmode="numeric" required />
+            <span class="field-error" data-error-for="idNumberMazda"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phoneMazda">Celular</label>
+            <input type="text" id="phoneMazda" name="phone" inputmode="numeric" required />
+            <span class="field-error" data-error-for="phoneMazda"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="vehicleRefMazda">Referencia de vehículo</label>
+            <select id="vehicleRefMazda" name="vehicleRef" required>
+              <option value="" disabled selected>Seleccione...</option>
+              <option value="opcion1">opcion1</option>
+              <option value="opcion2">opcion2</option>
+              <option value="opcion3">opcion3</option>
+            </select>
+            <span class="field-error" data-error-for="vehicleRefMazda"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="addressMazda">Dirección</label>
+            <input type="text" id="addressMazda" name="address" required />
+            <span class="field-error" data-error-for="addressMazda"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="cityMazda">Ciudad</label>
+            <input type="text" id="cityMazda" name="city" required />
+            <span class="field-error" data-error-for="cityMazda"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="advisorNameMazda">Nombre del asesor</label>
+            <input type="text" id="advisorNameMazda" name="advisorName" required />
+            <span class="field-error" data-error-for="advisorNameMazda"></span>
+          </div>
+
+          <div class="form-group form-group-full">
+            <label for="observationsMazda">Observaciones</label>
+            <textarea id="observationsMazda" name="observations" rows="4"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-submit">Registrar</button>
+            <span class="submit-feedback" data-feedback-for="formMazda"></span>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== Cupra ===== -->
+    <section class="tab-panel" data-tab-panel="Cupra">
+      <div class="form-card">
+        <form class="client-form" id="formCupra" data-brand="Cupra" novalidate>
+
+          <div class="form-group">
+            <label for="clientNameCupra">Nombre del cliente</label>
+            <input type="text" id="clientNameCupra" name="clientName" required />
+            <span class="field-error" data-error-for="clientNameCupra"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="idNumberCupra">Cédula</label>
+            <input type="text" id="idNumberCupra" name="idNumber" inputmode="numeric" required />
+            <span class="field-error" data-error-for="idNumberCupra"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phoneCupra">Celular</label>
+            <input type="text" id="phoneCupra" name="phone" inputmode="numeric" required />
+            <span class="field-error" data-error-for="phoneCupra"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="vehicleRefCupra">Referencia de vehículo</label>
+            <select id="vehicleRefCupra" name="vehicleRef" required>
+              <option value="" disabled selected>Seleccione...</option>
+              <option value="opcion1">opcion1</option>
+              <option value="opcion2">opcion2</option>
+              <option value="opcion3">opcion3</option>
+            </select>
+            <span class="field-error" data-error-for="vehicleRefCupra"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="addressCupra">Dirección</label>
+            <input type="text" id="addressCupra" name="address" required />
+            <span class="field-error" data-error-for="addressCupra"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="cityCupra">Ciudad</label>
+            <input type="text" id="cityCupra" name="city" required />
+            <span class="field-error" data-error-for="cityCupra"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="advisorNameCupra">Nombre del asesor</label>
+            <input type="text" id="advisorNameCupra" name="advisorName" required />
+            <span class="field-error" data-error-for="advisorNameCupra"></span>
+          </div>
+
+          <div class="form-group form-group-full">
+            <label for="observationsCupra">Observaciones</label>
+            <textarea id="observationsCupra" name="observations" rows="4"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-submit">Registrar</button>
+            <span class="submit-feedback" data-feedback-for="formCupra"></span>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Orden de carga: utils.js primero (helpers), luego main.js (lógica principal) -->
+  <script src="utils.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
